@@ -61,7 +61,7 @@ Review the prerequisites so that you can successfully install the Cloud Pak® fo
 
 * Admin access to the cluster.
 
-* A valid Transport Layer Security (TLS) certificate and certificate key for the Cloud Pak® for Security Fully Qualified Domain Name (FQDN). You can use the Transport Layer Security (TLS) certificates from your IBM Cloud OpenShift cluster. For more information, see [Domain name and TLS certificate](https://www.ibm.com/support/knowledgecenter/SSTDPP_1.4.0/platform/docs/security-pak/tls_certs.html){: external}.
+* A valid Transport Layer Security (TLS) certificate and certificate key for the Cloud Pak® for Security Fully Qualified Domain Name (FQDN). You can use the Transport Layer Security (TLS) certificates from your IBM Cloud OpenShift cluster. For more information, see [Domain name and TLS certificate](https://www.ibm.com/support/knowledgecenter/SSTDPP_1.4.0/platform/docs/security-pak/find-ibmcloud-fqdn.html){: external}.
 
 
 ### Minimum hardware requirements
@@ -83,7 +83,7 @@ The system disk requirements do not include the persistent storage requirements.
 ### Purchasing a license
 {: #license-entitlement}
 
-Before you can install the Cloud Pak, you must purchase a license. Purchase a license, also known as an entitlement, through [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}.
+Before you can install IBM Cloud Pak® for Security, you must purchase a license. Purchase a license, also known as an entitlement, through [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}.
 
 ## Step 1. Finding the Cloud Pak in the IBM Cloud Catalog
 {: #catalog}
