@@ -59,7 +59,7 @@ Review the prerequisites so that you can successfully install the Cloud Pak® fo
 
 * A single-zone cluster [Red Hat OpenShift on IBM Cloud Version >=4.4.14 or >=4.5.8](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift). 
 
-* Admin access to the cluster.
+* Administrator access to the Kubernetes cluster for both platform and service access policies. For more information, see [Assigning cluster access](https://cloud.ibm.com/docs/containers?topic=containers-users#access_policies).
 
 * A valid Transport Layer Security (TLS) certificate and certificate key for the Cloud Pak® for Security Fully Qualified Domain Name (FQDN). You can use the Transport Layer Security (TLS) certificates from your IBM Cloud OpenShift cluster. For more information, see [Domain name and TLS certificate](https://www.ibm.com/support/knowledgecenter/SSTDPP_1.4.0/platform/docs/security-pak/find-ibmcloud-fqdn.html){: external}.
 
