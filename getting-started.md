@@ -118,6 +118,8 @@ Go to the [IBM Cloud Catalog](https://cloud.ibm.com/catalog), and select the **C
 | domain | Cloud Pak for Security Application URL |
 {: caption="Table 2. Required deployment parameters for Cloud Pak for Security" caption-side="top"}
 
+**Note:** The user that you provide as `adminUserId` must be the admin for the LDAP directory with an email address in the LDAP directory. 
+
 | Optional values  | Description | Default
 | --------- | ----------- | ----------- |
 | storageClass | Cloud Pak for Security Default Storage Class | ibmc-block-gold |
