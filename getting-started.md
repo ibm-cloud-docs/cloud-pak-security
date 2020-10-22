@@ -57,7 +57,7 @@ Example: -->
 
 Review the prerequisites so that you can successfully install the Cloud Pak® for Security.
 
-* A single-zone cluster [Red Hat OpenShift on IBM Cloud Version >=4.4.14 or >=4.5.8](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift). 
+* A single-zone cluster [Red Hat OpenShift on IBM Cloud Version 4.4.14+ or 4.5.8+](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift). 
 
 * Administrator access to the Kubernetes cluster for both platform and service access policies. For more information, see [Assigning cluster access](https://cloud.ibm.com/docs/containers?topic=containers-users#access_policies).
 
