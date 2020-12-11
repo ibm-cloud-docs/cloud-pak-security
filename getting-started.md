@@ -47,7 +47,7 @@ IBM Cloud Pak® for Security includes the following applications.
   - IBM® QRadar® Security Intelligence Platform is offered as an on-premises solution and delivers intelligent security analytics, enabling visibility, detection, and investigation for a wide range of known and unknown threats.
   - IBM® QRadar® Proxy provides communication between IBM Cloud Pak for Security and IBM QRadar or QRadar on Cloud. This communication uses APIs to pull powerful QRadar data into the QRadar Security Information and Event Management (SIEM) dashboards.
   - IBM® QRadar® User Behavior Analytics is a tool for detecting insider threats in your organization. UBA, used in conjunction with the existing data in your QRadar system, can help you generate new insights around users and user risk. 
-  - IBM® Security Risk Manager (Preview) provides early visibility into potential security risks by correlating insights from multiple vectors so that you can prioritize risks to take appropriate remedial actions.
+  - IBM® Security Risk Manager (Preview) provides early visibility into potential security risks by correlating insights from multiple vectors so that you can prioritize risks to take appropriate remedial actions.The Risk Manager application is in Preview mode in Cloud Pak for Security 1.5.0. 
     
 For more information see, [Knowledge Center](https://www.ibm.com/support/knowledgecenter/SSTDPP_1.5.0/platform/docs/scp-core/overview.html){: external}.
 
