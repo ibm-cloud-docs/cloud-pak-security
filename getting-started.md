@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020,2021
-lastupdated: "2020-02-18"
+lastupdated: "2021-03-09"
 
 keywords: Cloud Pak® for Security, Install
 
@@ -61,7 +61,7 @@ Example: -->
 
 Review the prerequisites so that you can successfully install the IBM Cloud Pak® for Security.
 
-* A single-zone cluster [Red Hat OpenShift on IBM Cloud Version 4.6+](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift). 
+* A single-zone cluster [Red Hat OpenShift on IBM Cloud Version 4.6.X](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift). 
 
 * Administrator access to the Kubernetes cluster for both platform and service access policies. For more information, see [Assigning cluster access](https://cloud.ibm.com/docs/containers?topic=containers-users#access_policies).
 
@@ -103,9 +103,9 @@ Go to the [IBM Cloud Catalog](https://cloud.ibm.com/catalog), and select the **C
 ## Step 2. Configuring the installation
 {: #configure}
 
-1. Select the IBM Cloud Pak® for Security 1.6.0.0 version to install.
+1. Select the IBM Cloud Pak® for Security 1.6.0.1 version to install.
 
-2. Create or select a [RedHat OpenShift 4.6+ cluster](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift) for your installation.
+2. Create or select a [RedHat OpenShift 4.6.X cluster](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift) for your installation.
 
 3. Create or select a Project or Namespace.
 
@@ -217,14 +217,14 @@ The steps to upgrade are the same as the steps to install. The process automatic
 
 For information about working with your Cloud Pak®, see [Knowledge Center](https://www.ibm.com/support/knowledgecenter/SSTDPP_1.6.0){: external}.
 
-## Rolling back to IBM Cloud Pak® for Security 1.5.X.X
+## Rolling back to IBM Cloud Pak® for Security 1.6.0.0
 {: #rollback}
 
 1. Uninstall IBM Cloud Pak® for Security from the console by following the steps described in the [uninstall section](#uninstall). If a backup PVC existed prior to an upgrade attempt, the PVC cp4s-backup-pv-claim will be moved to the `kube-system` namespace.
 
-2. Reinstall IBM Cloud Pak® for Security 1.5.X.X by following install steps 1 to 5 in this [getting started](#prereqs) document and select the IBM Cloud Pak® for Security 1.5.X.X version to install. If a backup PVC existed prior to the rollback installation, the PVC cp4s-backup-pv-claim will be restored from `kube-system` to `<cp4s-namespace>`.
+2. Reinstall IBM Cloud Pak® for Security 1.6.0.0 by following install steps 1 to 5 in this [getting started](#prereqs) document and select the IBM Cloud Pak® for Security 1.6.0.0 version to install. If a backup PVC existed prior to the rollback installation, the PVC cp4s-backup-pv-claim will be restored from `kube-system` to `<cp4s-namespace>`.
 
-3. Reconfigure LDAP to add or recreate any users that existed before the upgrade. For more information, see [here](https://www.ibm.com/support/knowledgecenter/SSTDPP_1.5.0/platform/docs/security-pak/ldap-connect.html).
+3. Reconfigure LDAP to add or recreate any users that existed before the upgrade. For more information, see [here](https://www.ibm.com/support/knowledgecenter/SSTDPP_1.6.0/platform/docs/security-pak/ldap-connect.html).
 
-4. If a backup was completed before the upgrade process, you can restore the backup. For more information, see [here](https://www.ibm.com/support/knowledgecenter/en/SSTDPP_1.5.0/platform/docs/scp-core/backup-intro.html).
+4. If a backup was completed before the upgrade process, you can restore the backup. For more information, see [here](https://www.ibm.com/support/knowledgecenter/en/SSTDPP_1.6.0/platform/docs/scp-core/backup-intro.html).
 
