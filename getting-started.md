@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020,2021
-lastupdated: "2021-04-22"
+lastupdated: "2021-05-13"
 
 keywords: Cloud Pak® for Security, Install
 
@@ -47,7 +47,7 @@ IBM Cloud Pak® for Security includes the following applications.
   - IBM® QRadar® Security Intelligence Platform is offered as an on-premises solution and delivers intelligent security analytics, enabling visibility, detection, and investigation for a wide range of known and unknown threats.
   - IBM® QRadar® Proxy provides communication between IBM Cloud Pak for Security and IBM QRadar or QRadar on Cloud. This communication uses APIs to pull powerful QRadar data into the QRadar Security Information and Event Management (SIEM) dashboards.
   - IBM® QRadar® User Behavior Analytics is a tool for detecting insider threats in your organization. UBA, used in conjunction with the existing data in your QRadar system, can help you generate new insights around users and user risk. 
-  - IBM® Security Risk Manager (Beta) provides early visibility into potential security risks by correlating insights from multiple vectors so that you can prioritize risks to take appropriate remedial actions. The Risk Manager application is in Preview mode in Cloud Pak for Security 1.7.0. 
+  - IBM® Security Risk Manager (Beta) provides early visibility into potential security risks by correlating insights from multiple vectors so that you can prioritize risks to take appropriate remedial actions. The Risk Manager application is in Preview mode in Cloud Pak for Security 1.7.X. 
   - IBM® Security Threat Investigator (Beta) is an application that automatically analyzes and investigates cases to help determine the criticality of exposure, how many systems are at risk, and the level of remediation effort that is required.
     
 For more information see, [IBM Documentation](https://www.ibm.com/support/knowledgecenter/SSTDPP_1.7.0/docs/scp-core/overview.html){: external}.
@@ -70,7 +70,7 @@ Review the prerequisites so that you can successfully install the IBM Cloud Pak�
 
 * Administrator access to the Kubernetes cluster for both platform and service access policies. For more information, see [Assigning cluster access](https://cloud.ibm.com/docs/containers?topic=containers-users#access_policies).
 
-* You can install IBM Cloud Pak® for Security as a subdomain of your IBM Cloud OpenShift cluster by not specifying a `domain` while configuring your deployment. This method uses the Transport Layer Security (TLS) certificates from your IBM Cloud OpenShift cluster and the domain `cp4s.<your-cluster-subdomain>` is used to access IBM Cloud Pak® for Security.
+* You can install IBM Cloud Pak® for Security as a subdomain of your IBM Cloud OpenShift cluster by not specifying a `domain` while configuring your deployment. This method uses the Transport Layer Security (TLS) certificates from your IBM Cloud OpenShift cluster and the domain `cp4s.<your-cluster-ingress-subdomain>` is used to access IBM Cloud Pak® for Security.
 
 * A valid Transport Layer Security (TLS) certificate and certificate key for the Cloud Pak® for Security Fully Qualified Domain Name (FQDN). You can use the Transport Layer Security (TLS) certificates from your IBM Cloud® OpenShift cluster. For more information, see [Domain name and TLS certificate](https://www.ibm.com/support/knowledgecenter/SSTDPP_1.7.0/docs/security-pak/tls_certs.html){: external}.
 
@@ -105,7 +105,7 @@ Go to the [IBM Cloud Catalog](https://cloud.ibm.com/catalog), and select the **C
 ## Step 2. Configuring the installation
 {: #configure}
 
-1. Select the IBM Cloud Pak® for Security 1.7.0.0 version to install.
+1. Select the IBM Cloud Pak® for Security 1.7.1.0 version to install.
 
 2. Create or select a [RedHat OpenShift 4.6.X cluster](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift) for your installation.
 
@@ -121,14 +121,14 @@ Go to the [IBM Cloud Catalog](https://cloud.ibm.com/catalog), and select the **C
 
 | Required values | Description | 
 | --------- | ----------- |
-| adminUserId | The user that is to be assigned as an `Administrator` in the Cloud Pak for Security installation. The `Administrator` user must exist in an LDAP directory that you will setup in the [LDAP connection](https://www.ibm.com/support/knowledgecenter/SSTDPP_1.7.0/docs/security-pak/ldap-connect.html) section. |
+| adminUserId | The user that is to be assigned as an `Administrator` in the Cloud Pak for Security installation. The `Administrator` user must exist in an LDAP directory that you will setup in the post installation task [LDAP connection](https://www.ibm.com/support/knowledgecenter/SSTDPP_1.7.0/docs/security-pak/ldap-connect.html) section; or is a user that is added and authenticated using the IBM Cloud account in which the cluster was created. |
 {: caption="Table 2. Required deployment parameters for Cloud Pak for Security" caption-side="top"}
 
-**Note:** The user that you provide as `adminUserId` must be the admin for the LDAP directory with an email address in the LDAP directory. 
+**Note:** The user that you provide as `adminUserId` must be the admin for the LDAP directory with an email address in the LDAP directory. Take note the user you provided as that user will be the initial user for IBM Cloud Pak® for Security.
 
 | Optional values  | Description | Default |
 | --------- | ----------- | ----------- |
-| domain | Cloud Pak for Security application URL. If blank, OpenShift domain cp4s.<your-cluster-subdomain> and certificates are used. |  | 
+| domain | Cloud Pak for Security application URL. If blank, OpenShift ingress subdomain and certificates are used. The CP4S route will be cp4s.{your-cluster-ingress-subdomain}. |  | 
 | cert | Cloud Pak for Security domain TLS certificate. Required when `domain` is set. |  | 
 | certKey | Cloud Pak for Security domain TLS certificate key. Required when `domain` is set. | | 
 | customCA | Custom Certificate of Authority (CA) for untrusted certificate.   |  | 
@@ -151,7 +151,7 @@ When all the required parameters are set, click **Install**.
 ## Step 4. Monitor your installation in the workspace
 {: #workspace}
 
-The installation takes approximately 1.5 hours to complete and includes the installation of IBM Cloud Platform Foundational Services. After you start the installation, you are brought to the Schematics workspace for your Cloud Pak. You can track progress by viewing the logs. Go to the **Activity** tab, and click **View logs**.
+From this stage, the installation will take approximately 1.5 hours to complete which includes the installation of IBM Cloud Platform Foundational Services. After you start the installation, you are brought to the Schematics workspace for your Cloud Pak. You can track progress by viewing the logs. Go to the **Activity** tab, and click **View logs**.
 
 ## Step 5. Retrieve Foundational Services login details
 {: #password}
@@ -184,16 +184,14 @@ These login details are required to access Foundational Services and configure y
 ## Next steps
 {: #next-steps}
 
-1. [Configure LDAP authentication](https://www.ibm.com/support/knowledgecenter/SSTDPP_1.7.0/docs/security-pak/ldap-connect.html){: external} if the `OpenshiftAuthentication` installation parameter was not enabled.
-2. Log in to Cloud Pak® for Security.
-    * When the `domain` parameter is set during installation, log in using the value of the `domain` and the user value that is assigned in the parameter `adminUserId` .
-    * When the `domain` parameter is not set during installation, log in using the the domain `cp4s.<your-cluster-subdomain>` and the user value that is assigned in the parameter `adminUserId`.
-    
-    __Note:__ The `domain`, also known as `application URL`, can be retrieved by running the following command:
-      ```bash
-      oc get route isc-route-default --no-headers -n <CP4S_NAMESPACE> | awk '{print $2}'
-      ```
-      {: codeblock}
+1. If the `adminUserId` you provided is a user ID that you added and authenticated by using the IBM Cloud account that is associated with the cluster and `OpenShiftAuthentication` was enabled, go to step 2. Otherwise, [Configure LDAP authentication](https://www.ibm.com/support/knowledgecenter/SSTDPP_1.7.0/docs/security-pak/ldap-connect.html){: external} and ensure that the `adminUserId` that you provided exists in the LDAP directory.
+2. Log in to Cloud Pak® for Security using the domain and the `adminUserId` you provided during installation. The `domain`, also known as `application URL`, can be retrieved by running the following command:
+    ```bash
+    oc get route isc-route-default --no-headers -n <CP4S_NAMESPACE> | awk '{print $2}'
+    ```
+    {: codeblock}
+
+    Select `Enterprise LDAP` in the login screen if you are logging in using an LDAP you connected to Foundational Services, otherwise use `OpenShift Authentication` if it is enabled.
 
 3. [Add users to Cloud Pak® for Security](https://www.ibm.com/support/knowledgecenter/SSTDPP_1.7.0/docs/scp-core/users.html){: external}.
 4. Install the [IBM® Security Orchestration & Automation license](https://www.ibm.com/support/knowledgecenter/SSTDPP_1.7.0/docs/security-pak/license_UI.html){: external}.
