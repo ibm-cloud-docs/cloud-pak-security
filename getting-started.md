@@ -124,7 +124,7 @@ Go to the [IBM Cloud Catalog](https://cloud.ibm.com/catalog), and select the **C
 | adminUserId | The user that is to be assigned as an `Administrator` in the Cloud Pak for Security installation. The `Administrator` user must exist in an LDAP directory that you will setup in the post installation task [LDAP connection](https://www.ibm.com/support/knowledgecenter/SSTDPP_1.7.0/docs/security-pak/ldap-connect.html) section; or is a user that is added and authenticated using the IBM Cloud account in which the cluster was created. |
 {: caption="Table 2. Required deployment parameters for Cloud Pak for Security" caption-side="top"}
 
-**Note:** The user that you provide as `adminUserId` must be the admin for the LDAP directory with an email address in the LDAP directory. Take note the user you provided as that user will be the initial user for IBM Cloud Pak® for Security.
+**Note:** The user that you provide as `adminUserId` must be the admin for the LDAP directory with an email address in the LDAP directory. Take note of the user ID that you provide as that user ID will be the initial user ID that is required to log in to IBM Cloud Pak® for Security.
 
 | Optional values  | Description | Default |
 | --------- | ----------- | ----------- |
