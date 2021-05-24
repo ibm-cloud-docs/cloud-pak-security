@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020,2021
-lastupdated: "2021-05-13"
+lastupdated: "2021-05-24"
 
 keywords: Cloud Pak® for Security, Install
 
@@ -70,7 +70,7 @@ Review the prerequisites so that you can successfully install the IBM Cloud Pak�
 
 * Administrator access to the Kubernetes cluster for both platform and service access policies. For more information, see [Assigning cluster access](https://cloud.ibm.com/docs/containers?topic=containers-users#access_policies).
 
-* You can install IBM Cloud Pak® for Security as a subdomain of your IBM Cloud OpenShift cluster by not specifying a `domain` while configuring your deployment. This method uses the Transport Layer Security (TLS) certificates from your IBM Cloud OpenShift cluster and the domain `cp4s.<your-cluster-ingress-subdomain>` is used to access IBM Cloud Pak® for Security.
+* You can install IBM Cloud Pak® for Security as a subdomain of your IBM Cloud OpenShift cluster by not specifying a `domain` while configuring your deployment. If you choose this method, Cloud Pak® for Security uses the Transport Layer Security (TLS) certificates from your IBM Cloud OpenShift cluster and the ingress subdomain is used to access IBM Cloud Pak® for Security.
 
 * A valid Transport Layer Security (TLS) certificate and certificate key for the Cloud Pak® for Security Fully Qualified Domain Name (FQDN). You can use the Transport Layer Security (TLS) certificates from your IBM Cloud® OpenShift cluster. For more information, see [Domain name and TLS certificate](https://www.ibm.com/support/knowledgecenter/SSTDPP_1.7.0/docs/security-pak/tls_certs.html){: external}.
 
@@ -87,7 +87,7 @@ All Cloud Paks specify the minimum cluster requirements. List these here so a cu
 | Worker | 4 | 8 cores | 32 GB | 120 GB |
 {: caption="Table 1. Resource requirements for Cloud Pak for Security" caption-side="top"}
 
-For more information, see [hardware requirements](https://www.ibm.com/support/knowledgecenter/SSTDPP_1.7.0/docs/security-pak/hardware.html){: external}.
+**Note:** The hardware requirements will be validated automatically by the IBM Cloud catalog prior to the deployment.
 
 ### Minimum storage requirements
 
