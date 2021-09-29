@@ -158,6 +158,14 @@ When all the required parameters are set, click **Install**.
 
 From this stage, the installation will take approximately 1.5 hours to complete which includes the installation of IBM Cloud Pak foundational services. After you start the installation, you are brought to the Schematics workspace for your Cloud Pak. You can track progress by viewing the logs. Go to the **Activity** tab, and click **View logs**.
 
+To further track the installation, you can run the following command once you are logged into your cluster using OpenShift CLI:
+   ```bash
+   oc get CP4SThreatManagement threatmgmt -n <CP4S_NAMESPACE> -o jsonpath='{.status.conditions}'
+   ```
+{: codeblock}
+
+The installation is complete when you see the message `Cloudpak for Security Deployment is successful`.
+
 ## Step 5. Retrieve foundational services login details
 {: #password}
 
