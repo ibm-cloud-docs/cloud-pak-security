@@ -330,4 +330,4 @@ For information about upgrading your IBM Cloud Pak® for Security, see [Upgradin
 
 3. Reconfigure LDAP to add or recreate any users that existed before the upgrade. For more information, see [Configure LDAP](https://www.ibm.com/docs/en/SSTDPP_1.8/docs/security-pak/ldap-connect.html){: external}.
 
-4. If a backup was completed before the upgrade process, you can restore the backup. For more information, see [Backup and Restore](https://www.ibm.com/docs/en/SSTDPP_1.8/docs/security-pak/backup-intro.html).
+4. If a backup was completed before the upgrade process, you can restore the backup. For more information, see [Backup and Restore](https://www.ibm.com/docs/en/SSTDPP_1.8/docs/scp-core/backup-intro.html).
