@@ -96,7 +96,7 @@ All Cloud Paks specify the minimum cluster requirements. List these here so a cu
 
 ### Minimum storage requirements
 
-The system disk requirements do not include the persistent storage requirements. The persistent storage requirement for IBM Cloud Pak® for Security is 1 TB. For more information, see [persistent storage requirements](https://www.ibm.com/docs/en/SSTDPP_1.8/docs/security-pak/persistent_storage.html){: external}.
+The system disk requirements do not include the persistent storage requirements. The persistent storage requirement for IBM Cloud Pak® for Security is 3.5 TB. For more information, see [persistent storage requirements](https://www.ibm.com/docs/en/SSTDPP_1.8/docs/security-pak/persistent_storage.html){: external}.
 
 
 ## Step 1. Finding the Cloud Pak in the IBM Cloud Catalog
