@@ -197,9 +197,9 @@ These login details are required to access foundational services and configure y
 ## Next steps
 {: #next-steps}
 
-1. If the `adminUserId` you provided is a user ID that you added and authenticated by using the IBM Cloud account that is associated with the cluster and `OpenShiftAuthentication` was enabled, go to step 2. Otherwise, [Configure LDAP authentication](https://www.ibm.com/docs/en/SSTDPP_1.8/docs/security-pak/ldap-connect.html){: external} and ensure that the `adminUser` that you provided exists in the LDAP directory. and ensure that the `adminUserId` that you provided exists in the LDAP directory.
+1. If the `adminUser` you provided is a user ID that you added and authenticated by using the IBM Cloud account that is associated with the cluster and `OpenShiftAuthentication` was enabled, go to step 2. Otherwise, [Configure LDAP authentication](https://www.ibm.com/docs/en/SSTDPP_1.8/docs/security-pak/ldap-connect.html){: external} and ensure that the `adminUser` that you provided exists in the LDAP directory. and ensure that the `adminUser` that you provided exists in the LDAP directory.
 
-2. Log in to Cloud Pak® for Security using the domain and the `adminUserId` that you provided during installation. The `domain`, also known as `application URL`, can be retrieved by running the following command:
+2. Log in to Cloud Pak® for Security using the domain and the `adminUser` that you provided during installation. The `domain`, also known as `application URL`, can be retrieved by running the following command:
     ```bash
     oc get route isc-route-default --no-headers -n <CP4S_NAMESPACE> | awk '{print $2}'
     ```
