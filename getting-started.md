@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020,2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-09-30"
 
 keywords: Cloud Pak® for Security, Install
 
@@ -326,7 +326,7 @@ For information about upgrading your IBM Cloud Pak® for Security, see [Upgradin
 
 1. Uninstall IBM Cloud Pak® for Security completely using the CLI by following the steps described in [Uninstalling IBM Cloud Pak® for Security using CLI](https://www.ibm.com/docs/en/SSTDPP_1.8/docs/security-pak/uninstallCP4S_OpenshiftCLI.html){: external}.
 
-2. Reinstall a previous version of IBM Cloud Pak® for Security by following install steps 1 to 5 in this [getting started](#prereqs) document and select the 1.7.2.0 IBM Cloud Pak® for Security to install.
+2. Reinstall a previous version of IBM Cloud Pak® for Security by following install steps 1 to 5 in this [Getting started](#prereqs) document and select the 1.7.2.0 IBM Cloud Pak® for Security to install.
 
 3. Reconfigure LDAP to add or recreate any users that existed before the upgrade. For more information, see [Configure LDAP](https://www.ibm.com/docs/en/SSTDPP_1.8/docs/security-pak/ldap-connect.html){: external}.
 
