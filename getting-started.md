@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020,2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-11-09"
 
 keywords: Cloud Pak® for Security, Install
 
@@ -72,7 +72,7 @@ Example: -->
 
 Review the prerequisites so that you can successfully install the IBM Cloud Pak® for Security.
 
-* A [Red Hat OpenShift](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift) cluster on IBM Cloud with version 4.6.X, 4.7.X, 4.8.X, or 4.10.X.
+* A [Red Hat OpenShift](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift) cluster on IBM Cloud with version 4.8.X or 4.10.X.
 
 * The Red Hat OpenShift cluster needs to have internet access during the deployment time of IBM Cloud Pak® for Security.
 
@@ -97,7 +97,7 @@ Review the prerequisites so that you can successfully install the IBM Cloud Pak�
             namespace: knative-serving
         spec:
             high-availability:
-                replicas: 1
+                replicas: 2
         ```
 
     2. Click on the `Create` button to start the installation of Knative Serving component.
@@ -133,9 +133,9 @@ Go to the [IBM Cloud Catalog](https://cloud.ibm.com/catalog), and select the **C
 ## Step 2. Configuring the installation
 {: #configure}
 
-1. Select the IBM Cloud Pak® for Security 1.10.4.0 version for the installation.
+1. Select the IBM Cloud Pak® for Security 1.10.5.0 version for the installation.
 
-2. Create or select a [RedHat OpenShift 4.6.X, 4.7.X, 4.8.X, or 4.10.X cluster](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift) for your installation.
+2. Create or select a [RedHat OpenShift 4.8.X or 4.10.X cluster](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift) for your installation.
 
 3. Create or select a Project or Namespace.
 
@@ -267,10 +267,10 @@ Uninstalling the IBM Cloud Pak® for Security from the console:
 
 The steps to upgrade are the same as the steps to install. The process automatically detects an older version and initiates an upgrade. Ensure that when filling in the parameters, the following parameters matches what you have in the version of IBM Cloud Pak® for Security currently installed in your cluster:
 
-* If you are upgrading from IBM Cloud Pak® for Security 1.8.X or 1.9.X, use the following procedure to retrieve the values for the parameters you need to pass in during the upgrade.
+* If you are upgrading from IBM Cloud Pak® for Security 1.9.X, use the following procedure to retrieve the values for the parameters you need to pass in during the upgrade.
 
     * Login to your Red Hat OpenShift web console.
-    * Go to **Operators** > **Installed Operators** and ensure that the `Project` dropdown is set to the namespace where IBM Cloud Pak® for Security 1.8.X was installed.
+    * Go to **Operators** > **Installed Operators** and ensure that the `Project` dropdown is set to the namespace where IBM Cloud Pak® for Security 1.9.X was installed.
     * In the list of installed operators, click **IBM Cloud Pak for Security**.
     * Navigate to the `Threat Management` tab and click on the `threatmgmt` instance.
     * From the `Threat Management Overview` page, make note of the value currently set for the following parameters:
@@ -279,7 +279,7 @@ The steps to upgrade are the same as the steps to install. The process automatic
         * Storage class
         * Enable ROKS Authentication
 
-* If you are upgrading from IBM Cloud Pak® for Security 1.7.2.0, you must first upgrade to 1.8.X or 1.9.X and use the following commands to retrieve the values for the parameters you need to pass in during the upgrade.
+* If you are upgrading from IBM Cloud Pak® for Security 1.7.2.0, you must first upgrade to 1.9.X and use the following commands to retrieve the values for the parameters you need to pass in during the upgrade.
 
     * `namespace` - Provide the namespace where IBM Cloud Pak® for Security 1.7.2.0 was installed.
 
@@ -312,12 +312,8 @@ The steps to upgrade are the same as the steps to install. The process automatic
 
 1. Uninstall IBM Cloud Pak® for Security completely using the CLI by following the steps described in [Uninstalling IBM Cloud Pak® for Security using CLI](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/security-pak/uninstallCP4S_OpenshiftCLI.html){: external}.
 
-2. Reinstall a previous version of IBM Cloud Pak® for Security by following install steps 1 to 5 in this [Getting started](#prereqs) document and select the 1.8.0.0 or 1.9.1.0 version of IBM Cloud Pak® for Security to install.
+2. Reinstall a previous version of IBM Cloud Pak® for Security by following install steps 1 to 5 in this [Getting started](#prereqs) document and select the 1.9.1.0 version of IBM Cloud Pak® for Security to install.
 
-3. Reconfigure LDAP to add or recreate any users that existed before the upgrade. For more information, see the corresponding document that matches the version your are rolling back to:
-    * [Configure LDAP in 1.8.X](https://www.ibm.com/docs/en/SSTDPP_1.8/docs/security-pak/ldap-connect.html){: external}.
-    * [Configure LDAP in 1.9.X](https://www.ibm.com/docs/en/SSTDPP_1.9/docs/security-pak/ldap-connect.html){: external}.
+3. Reconfigure LDAP to add or recreate any users that existed before the upgrade. For more information, see [Configure LDAP](https://www.ibm.com/docs/en/SSTDPP_1.9/docs/security-pak/ldap-connect.html){: external}.
 
-4. If a backup was completed before the upgrade process, you can restore the backup. For more information, see the corresponding document that matches the version your are rolling back to:
-    * [Backup and Restore in 1.8.X](https://www.ibm.com/docs/en/SSTDPP_1.8/docs/scp-core/backup-intro.html){: external}.
-    * [Backup and Restore in 1.9.X](https://www.ibm.com/docs/en/SSTDPP_1.9/docs/scp-core/backup-intro.html){: external}.
+4. If a backup was completed before the upgrade process, you can restore the backup. For more information, see [Backup and Restore](https://www.ibm.com/docs/en/SSTDPP_1.9/docs/scp-core/backup-intro.html){: external}.
