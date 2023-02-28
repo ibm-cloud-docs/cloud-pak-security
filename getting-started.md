@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020,2022,2023
-lastupdated: "2023-01-25"
+lastupdated: "2023-02-28"
 
 keywords: Cloud Pak® for Security, Install
 
@@ -133,7 +133,7 @@ Go to the [IBM Cloud Catalog](https://cloud.ibm.com/catalog), and select the **C
 ## Step 2. Configuring the installation
 {: #configure}
 
-1. Select the IBM Cloud Pak® for Security 1.10.8.0 version for the installation.
+1. Select the IBM Cloud Pak® for Security 1.10.9.0 version for the installation.
 
 2. Create or select a [RedHat OpenShift 4.8.X or 4.10.X cluster](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift) for your installation.
 
