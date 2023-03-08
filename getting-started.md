@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020,2022,2023
-lastupdated: "2023-02-28"
+lastupdated: "2023-03-08"
 
 keywords: Cloud PakÂ® for Security, Install
 
@@ -90,7 +90,7 @@ Review the prerequisites so that you can successfully install the IBM Cloud PakÂ
 2. Install the Knative Serving component.
     1. In the OpenShift web console, click the `+` button located in the top right of the screen and paste the following content in the YAML dialog box:
         ```yaml
-        apiVersion: operator.knative.dev/v1alpha1
+        apiVersion: operator.knative.dev/v1beta1
         kind: KnativeServing
         metadata:
             name: knative-serving
