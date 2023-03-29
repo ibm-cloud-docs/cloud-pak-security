@@ -2,7 +2,7 @@
 
 
 copyright:
-  years: 2020,2022,2023
+  years: 2020, 2023
 lastupdated: "2023-03-29"
 
 keywords: Cloud Pak® for Security, Install
@@ -237,6 +237,7 @@ Use the following commands to retrieve IBM Cloud Pak foundational services hostn
 3. [Add users to Cloud Pak® for Security](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/scp-core/users.html){: external}.
 
 4. Install the [IBM® Security Orchestration & Automation license](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/security-pak/license_UI.html){: external}.
+
 If you choose Orchestration & Automation as part of your Cloud Pak® for Security bundle, you must install your Orchestration & Automation license to access the complete orchestration and automation capabilities that are provided by Orchestration & Automation.
 
 5. [Configure data sources](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/scp-core/data-sources.html){: external}.
