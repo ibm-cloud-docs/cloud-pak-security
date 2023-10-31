@@ -1,0 +1,13 @@
+toc:
+  properties:
+    subcollection: cloud-pak-security
+    category: security
+    audience: software
+    href: /docs/cloud-pak-security
+    path: cloud-pak-security
+    label: Cloud Pak for Security
+  entries:
+  - navgroup:
+      id: learn
+      topics:
+      - getting-started.md
