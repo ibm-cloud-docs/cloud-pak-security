@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-29"
+lastupdated: "2023-10-23"
 
 keywords: Cloud Pak® for Security, Install
 
@@ -72,7 +72,7 @@ Example: -->
 
 Review the prerequisites so that you can successfully install the IBM Cloud Pak® for Security.
 
-* A [Red Hat OpenShift](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift) cluster on IBM Cloud with version 4.8.X or 4.10.X.
+* A [Red Hat OpenShift](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift) cluster on IBM Cloud with version 4.12.X.
 
 * The Red Hat OpenShift cluster needs to have internet access during the deployment time of IBM Cloud Pak® for Security.
 
@@ -85,7 +85,7 @@ Review the prerequisites so that you can successfully install the IBM Cloud Pak�
 ### Install OpenShift Serverless
 {: #openshift-serverless}
 
-1. Install OpenShift Serverless operator and ensure it is running. OpenShift Serverless is installed through the OpenShift Serverless Operator. Login to the OpenShift web console and follow the steps outlined in the [Red Hat Openshift documentation](https://docs.openshift.com/container-platform/4.8/serverless/install/install-serverless-operator.html#install-serverless-operator).
+1. Install OpenShift Serverless operator and ensure it is running. OpenShift Serverless is installed through the OpenShift Serverless Operator. Login to the OpenShift web console and follow the steps outlined in the [Red Hat Openshift documentation](https://docs.openshift.com/container-platform/4.12/serverless/install/install-serverless-operator.html#install-serverless-operator).
 
 2. Install the Knative Serving component.
     1. In the OpenShift web console, click the `+` button located in the top right of the screen and paste the following content in the YAML dialog box:
@@ -118,6 +118,7 @@ All Cloud Paks specify the minimum cluster requirements. List these here so a cu
 **Important:** The hardware requirements is validated automatically by the IBM Cloud catalog prior to the deployment.
 
 ### Minimum storage requirements
+{: #min-storage-reqs}
 
 The system disk requirements do not include the persistent storage requirements. The persistent storage requirement for IBM Cloud Pak® for Security is 3.5 TB. For more information, see [persistent storage requirements](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/security-pak/persistent_storage.html){: external}.
 
@@ -135,7 +136,7 @@ Go to the [IBM Cloud Catalog](https://cloud.ibm.com/catalog), and select the **C
 
 1. Select the latest IBM Cloud Pak® for Security version for the installation.
 
-2. Create or select a [RedHat OpenShift 4.8.X or 4.10.X cluster](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift) for your installation.
+2. Create or select a [RedHat OpenShift 4.12.X cluster](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift) for your installation.
 
 3. Create or select a Project or Namespace.
 
@@ -187,11 +188,11 @@ To further track the installation, you can monitor the status of IBM Cloud Pak®
 3. In the list of installed operators, click **IBM Cloud Pak for Security**.
 4. On the **Threat Management** tab, select the **threatmgmt** instance.
 5. On the Details page, the following message is displayed in the **Conditions** section when installation is complete.
-    ```
-    Cloudpak for Security Deployment is successful.
-    ```
-
-The installation is complete when you see the message `Cloudpak for Security Deployment is successful`.
+   
+   ```bash
+   Cloudpak for Security Deployment is successful
+   ``` 
+   The installation is complete when you see the `Cloudpak for Security Deployment is successful` message.
 
 ## Step 5. Retrieve foundational services login details
 {: #password}
