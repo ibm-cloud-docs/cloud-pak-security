@@ -291,7 +291,7 @@ The steps to upgrade are the same as the steps to install. The process automatic
         ```
         {: codeblock}
 
-    * `domain` - The current domain being used by {{site.data.keyword.isc}} can be retrieved by running the following command:
+    * `domain` - The current domain being used by `{site.data.keyword.isc}` can be retrieved by running the following command:
         ```bash
         oc get route isc-route-default -o jsonpath='{.spec.host}' -n <CP4S_NAMESPACE>
         ```
@@ -314,8 +314,8 @@ The steps to upgrade are the same as the steps to install. The process automatic
 
 1. Uninstall IBM Cloud Pak® for Security completely using the CLI by following the steps described in [Uninstalling IBM Cloud Pak® for Security using CLI](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/security-pak/uninstallCP4S_OpenshiftCLI.html){: external}.
 
-2. Reinstall a previous version of IBM Cloud Pak® for Security by following install steps 1 to 5 in this [Getting started](#prereqs) document and select the 1.9.1.0 version of IBM Cloud Pak® for Security to install.
+2. Reinstall a previous version of IBM Cloud Pak® for Security by following install steps 1 to 5 in this [Getting started](#prereqs) document and select the previous version of IBM Cloud Pak® for Security to install.
 
-3. Reconfigure LDAP to add or recreate any users that existed before the upgrade. For more information, see [Configure LDAP](https://www.ibm.com/docs/en/SSTDPP_1.9/docs/security-pak/ldap-connect.html){: external}.
+3. Reconfigure LDAP to add or recreate any users that existed before the upgrade. For more information, see [Configure LDAP](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/security-pak/ldap-connect.html){: external}.
 
-4. If a backup was completed before the upgrade process, you can restore the backup. For more information, see [Backup and Restore](https://www.ibm.com/docs/en/SSTDPP_1.9/docs/scp-core/backup-intro.html){: external}.
+4. If a backup was completed before the upgrade process, you can restore the backup. For more information, see [Backup and Restore](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/scp-core/backup-intro.html){: external}.
