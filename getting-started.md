@@ -291,7 +291,7 @@ The steps to upgrade are the same as the steps to install. The process automatic
         ```
         {: codeblock}
 
-    * `domain` - The current domain being used by `{site.data.keyword.isc}` can be retrieved by running the following command:
+    * `domain` - The current domain being used by IBM Cloud Pak® for Security 1.7.2.0 can be retrieved by running the following command:
         ```bash
         oc get route isc-route-default -o jsonpath='{.spec.host}' -n <CP4S_NAMESPACE>
         ```
