@@ -267,48 +267,12 @@ Uninstalling the IBM Cloud Pak® for Security from the console:
 ## Upgrading IBM Cloud Pak® for Security
 {: #upgrade}
 
-The steps to upgrade are the same as the steps to install. The process automatically detects an older version and initiates an upgrade. Ensure that when filling in the parameters, the following parameters matches what you have in the version of IBM Cloud Pak® for Security currently installed in your cluster:
+If your approval strategy is set to **Automatic**, the IBM Cloud Pak® for Security operator upgrades automatically when new compatible versions are available. For more information, see [Approval Strategy](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/security-pak/approval_strategy.html){: external}. 
 
-* If you are upgrading from IBM Cloud Pak® for Security 1.9.X, use the following procedure to retrieve the values for the parameters you need to pass in during the upgrade.
+To upgrade IBM Cloud Pak® for Security when your approval strategy is set to **Manual**, see [Upgrading to a later 1.10 release when your approval strategy is set to Manual](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/security-pak/upgrading#upgrade_manual.html){: external}.
 
-    * Login to your Red Hat OpenShift web console.
-    * Go to **Operators** > **Installed Operators** and ensure that the `Project` dropdown is set to the namespace where IBM Cloud Pak® for Security 1.9.X was installed.
-    * In the list of installed operators, click **IBM Cloud Pak for Security**.
-    * Navigate to the `Threat Management` tab and click on the `threatmgmt` instance.
-    * From the `Threat Management Overview` page, make note of the value currently set for the following parameters:
-        * Admin User
-        * Domain
-        * Storage class
-        * Enable ROKS Authentication
 
-* If you are upgrading from IBM Cloud Pak® for Security 1.7.2.0, you must first upgrade to 1.9.X and use the following commands to retrieve the values for the parameters you need to pass in during the upgrade.
-
-    * `namespace` - Provide the namespace where IBM Cloud Pak® for Security 1.7.2.0 was installed.
-
-    * `adminUser` - The admin user ID set during the IBM Cloud Pak® for Security 1.7.2.0 installation. You can verify the value by running the following command:
-        ```bash
-        oc get deploy isc-entitlements -o yaml -n <CP4S_NAMESPACE> | grep "name: ADMIN_USER_ID" -A1
-        ```
-        {: codeblock}
-
-    * `domain` - The current domain being used by IBM Cloud Pak® for Security 1.7.2.0 can be retrieved by running the following command:
-        ```bash
-        oc get route isc-route-default -o jsonpath='{.spec.host}' -n <CP4S_NAMESPACE>
-        ```
-        {: codeblock}
-
-    * `storageClass` - Set the storage class to the same storage class being used in IBM Cloud Pak® for Security 1.7.2.0 which should be default storage class. You can run the following command to verify the default storage class in the cluster:
-        ```bash
-        oc get sc
-        ```
-        {: codeblock}
-
-    * `roksAuthentication` - Set this to the same value you used in the `cp4sOpenshiftAuthentication` parameter when installing IBM Cloud Pak® for Security 1.7.2.0. Verify the value that you used by running the following command:
-        ```bash
-        oc get cm platform-auth-idp -n ibm-common-services -o jsonpath='{.data.ROKS_ENABLED}'
-        ```
-        {: codeblock}
-
+<!-- DRAFTED: Rollback not supported currently (drafted for future use)
 ## Rolling back to a previous version of IBM Cloud Pak® for Security
 {: #rollback}
 
@@ -318,4 +282,4 @@ The steps to upgrade are the same as the steps to install. The process automatic
 
 3. Reconfigure LDAP to add or recreate any users that existed before the upgrade. For more information, see [Configure LDAP](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/security-pak/ldap-connect.html){: external}.
 
-4. If a backup was completed before the upgrade process, you can restore the backup. For more information, see [Backup and Restore](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/scp-core/backup-intro.html){: external}.
+4. If a backup was completed before the upgrade process, you can restore the backup. For more information, see [Backup and Restore](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/scp-core/backup-intro.html){: external}. -->
