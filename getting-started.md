@@ -269,7 +269,7 @@ Uninstalling the IBM Cloud Pak® for Security from the console:
 
 If your approval strategy is set to **Automatic**, the IBM Cloud Pak® for Security operator upgrades automatically when new compatible versions are available. For more information, see [Approval Strategy](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/security-pak/approval_strategy.html){: external}. 
 
-To upgrade IBM Cloud Pak® for Security when your approval strategy is set to **Manual**, see [Upgrading to a later 1.10 release when your approval strategy is set to Manual](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/security-pak/upgrading#upgrade_manual.html){: external}.
+To upgrade IBM Cloud Pak® for Security when your approval strategy is set to **Manual**, see [Upgrading to a later 1.10 release when your approval strategy is set to Manual](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/security-pak/upgrading.html#upgrade_manual){: external}.
 
 
 <!-- DRAFTED: Rollback not supported currently (drafted for future use)
