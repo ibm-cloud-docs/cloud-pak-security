@@ -72,7 +72,7 @@ Example: -->
 
 Review the prerequisites so that you can successfully install the IBM Cloud Pak® for Security.
 
-* A [Red Hat OpenShift](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift) cluster on IBM Cloud with version 4.12.X.
+* A [Red Hat OpenShift](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift) cluster on IBM Cloud with version 4.12.X or 4.14.X.
 
 * The Red Hat OpenShift cluster needs to have internet access during the deployment time of IBM Cloud Pak® for Security.
 
@@ -85,7 +85,7 @@ Review the prerequisites so that you can successfully install the IBM Cloud Pak�
 ### Install OpenShift Serverless
 {: #openshift-serverless}
 
-1. Install OpenShift Serverless operator and ensure it is running. OpenShift Serverless is installed through the OpenShift Serverless Operator. Login to the OpenShift web console and follow the steps outlined in the [Red Hat Openshift documentation](https://docs.openshift.com/container-platform/4.12/serverless/install/install-serverless-operator.html#serverless-install-web-console_install-serverless-operator).
+1. Install OpenShift Serverless operator and ensure it is running. OpenShift Serverless is installed through the OpenShift Serverless Operator. Login to the OpenShift web console and follow the steps outlined in the [Red Hat Openshift documentation](https://docs.openshift.com/serverless/1.31/install/install-serverless-operator.html#serverless-install-web-console_install-serverless-operator).
 
 2. Install the Knative Serving component.
     1. In the OpenShift web console, click the `+` button located in the top right of the screen and paste the following content in the YAML dialog box:
@@ -112,7 +112,7 @@ All Cloud Paks specify the minimum cluster requirements. List these here so a cu
 
 | Node type | Number of nodes | CPU | RAM | Storage |
 | --------- | ----------- | ----------- | ----------- | ------- |
-| Worker | 4 | 8 cores | 32 GB | 120 GB |
+| Worker | 3 | 16 cores | 64 GB | 120 GB |
 {: caption="Table 1. Resource requirements for Cloud Pak for Security" caption-side="top"}
 
 **Important:** The hardware requirements is validated automatically by the IBM Cloud catalog prior to the deployment.
@@ -136,7 +136,7 @@ Go to the [IBM Cloud Catalog](https://cloud.ibm.com/catalog), and select the **C
 
 1. Select the latest IBM Cloud Pak® for Security version for the installation.
 
-2. Create or select a [RedHat OpenShift 4.12.X cluster](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift) for your installation.
+2. Create or select a [RedHat OpenShift 4.12.X or 4.14.X cluster](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift) for your installation.
 
 3. Create or select a Project or Namespace.
 
