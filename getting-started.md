@@ -7,7 +7,7 @@ lastupdated: "2023-10-23"
 
 keywords: Cloud Pak® for Security, Install
 
-subcollection: writing
+subcollection: cloud-pak-security
 
 
 ---
@@ -76,16 +76,16 @@ Review the prerequisites so that you can successfully install the IBM Cloud Pak�
 
 * The Red Hat OpenShift cluster needs to have internet access during the deployment time of IBM Cloud Pak® for Security.
 
-* Administrator access to the Kubernetes cluster for both platform and service access policies. For more information, see [Assigning cluster access](https://cloud.ibm.com/docs/containers?topic=containers-users#access_policies).
+* Administrator access to the Kubernetes cluster for both platform and service access policies. For more information, see [Assigning cluster access](https://cloud.ibm.com/docs/containers?topic=containers-users#add_users).
 
-* Install the OpenShift Serverless operator and Knative Serving component using the steps [here](#install-openshift-serverless).
+* Install the OpenShift Serverless operator and Knative Serving component using the steps [here](#openshift-serverless).
 
 * You can install IBM Cloud Pak® for Security as a subdomain of your IBM Cloud OpenShift cluster by not specifying a `domain` while configuring your deployment. If you choose this method, Cloud Pak® for Security uses the Transport Layer Security (TLS) certificates from your IBM Cloud OpenShift cluster and the ingress subdomain is used to access IBM Cloud Pak® for Security or you can use a Fully Qualified Domain Name (FQDN) for Cloud Pak® for Security with a valid TLS certificate and certificate key. You can use the TLS certificates from your IBM Cloud® OpenShift cluster. For more information, see [Domain name and TLS certificate](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/security-pak/tls_certs.html){: external}.
 
 ### Install OpenShift Serverless
 {: #openshift-serverless}
 
-1. Install OpenShift Serverless operator and ensure it is running. OpenShift Serverless is installed through the OpenShift Serverless Operator. Login to the OpenShift web console and follow the steps outlined in the [Red Hat Openshift documentation](https://docs.openshift.com/container-platform/4.12/serverless/install/install-serverless-operator.html#install-serverless-operator).
+1. Install OpenShift Serverless operator and ensure it is running. OpenShift Serverless is installed through the OpenShift Serverless Operator. Login to the OpenShift web console and follow the steps outlined in the [Red Hat Openshift documentation](https://docs.openshift.com/container-platform/4.12/serverless/install/install-serverless-operator.html#serverless-install-web-console_install-serverless-operator).
 
 2. Install the Knative Serving component.
     1. In the OpenShift web console, click the `+` button located in the top right of the screen and paste the following content in the YAML dialog box:
@@ -145,7 +145,7 @@ Go to the [IBM Cloud Catalog](https://cloud.ibm.com/catalog), and select the **C
 5. Set your deployment values as outlined in the following tables.
     | Required values | Description | Default |
     | --------- | ----------- | ----------- |
-    | adminUser | The user that is to be assigned as an `Administrator` in the default Cloud Pak for Security account after installation. The `Administrator` user must exist in an Lightweight Directory Access Protocol (LDAP) directory that you will setup in the post installation task [LDAP connection](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/security-pak/ldap-connect.html) section; or is a user that is added and authenticated using the IBM Cloud account in which the cluster was created. |
+    | adminUser | The user that is to be assigned as an `Administrator` in the default Cloud Pak for Security account after installation. The `Administrator` user must exist in an Lightweight Directory Access Protocol (LDAP) directory that you will setup in the post installation task [LDAP connection](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/security-pak/ldap-connect.html){: external} section; or is a user that is added and authenticated using the IBM Cloud account in which the cluster was created. |
     {: caption="Table 2. Required deployment parameters for Cloud Pak for Security" caption-side="top"}
 
     **Note:** The user that you provide as `adminUser` must be the admin for the LDAP directory with an email address in the LDAP directory. Take note of the user that you provide as that user will be required as the initial user to log in to IBM Cloud Pak® for Security.
@@ -160,10 +160,10 @@ Go to the [IBM Cloud Catalog](https://cloud.ibm.com/catalog), and select the **C
     | backupStorageClass | Storage class used for creating the backup PVC. If this value is not set, IBM Cloud Pak&reg; for Security will use the same value set in `storageClass` parameter. |  |
     | backupStorageSize | Override the default backup storage PVC size. | 500Gi |
     | imagePullPolicy | Image pull policy for the containers. | IfNotPresent |
-    | roksAuthentication | Enable ROKS Authentication. For more details, see [Configuring OpenShift authentication on IBM Cloud](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/scp-core/roks-authentication.html). | false |
-    | deployDRC | Deploy Detection and Response Center (Beta) application. Optional when deploying Cloud Pak for Security. See more details in [Detection and Response Center (Beta)](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/drc/c_DRC_intro.html). | true |
-    | deployRiskManager | Deploy Risk Manager application. Optional when deploying Cloud Pak for Security. See more details in [Risk Manager](https://www.ibm.com/docs/en/SSTDPP_1.10/datariskmanager/welcome.html). | true |
-    | deployThreatInvestigator | Deploy Threat Investigator application. Optional when deploying Cloud Pak for Security. See more details in [Threat Investigator](https://www.ibm.com/docs/en/SSTDPP_1.10/investigator/investigator_intro.html). | true |
+    | roksAuthentication | Enable ROKS Authentication. For more details, see [Configuring OpenShift authentication on IBM Cloud](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/scp-core/roks-authentication.html){: external}. | false |
+    | deployDRC | Deploy Detection and Response Center (Beta) application. Optional when deploying Cloud Pak for Security. See more details in [Detection and Response Center (Beta)](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/drc/c_DRC_intro.html){: external}. | true |
+    | deployRiskManager | Deploy Risk Manager application. Optional when deploying Cloud Pak for Security. See more details in [Risk Manager](https://www.ibm.com/docs/en/SSTDPP_1.10/datariskmanager/welcome.html){: external}. | true |
+    | deployThreatInvestigator | Deploy Threat Investigator application. Optional when deploying Cloud Pak for Security. See more details in [Threat Investigator](https://www.ibm.com/docs/en/SSTDPP_1.10/investigator/investigator_intro.html){: external}. | true |
     {: caption="Table 3. Optional deployment parameters for Cloud Pak for Security" caption-side="top"}
   
     For more information about certificates, see [Domain name and TLS certificate](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/security-pak/tls_certs.html){: external}.  
@@ -261,61 +261,25 @@ Uninstalling the IBM Cloud Pak® for Security from the console:
 6. To verify that the IBM Cloud Pak® for Security is uninstalled, access the OpenShift web console and verify that the components that are related to the IBM Cloud Pak® for Security, such as any related pods, are no longer installed.
 
 
-**Important note:** The uninstall only removes the instance IBM Cloud Pak® for Security Threat Management CR and does not terminate the namespace. It also does not remove the IBM Cloud Pak® Foundational Services that are installed in the cluster. If you want to remove all the IBM Cloud Pak® for Security resources and terminate the namespace or remove the IBM Cloud Pak® Foundational Services, see [Uninstalling IBM Cloud Pak® for Security using CLI](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/security-pak/uninstallCP4S_OpenshiftCLI.html). 
+**Important note:** The uninstall only removes the instance IBM Cloud Pak® for Security Threat Management CR and does not terminate the namespace. It also does not remove the IBM Cloud Pak® Foundational Services that are installed in the cluster. If you want to remove all the IBM Cloud Pak® for Security resources and terminate the namespace or remove the IBM Cloud Pak® Foundational Services, see [Uninstalling IBM Cloud Pak® for Security using CLI](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/security-pak/uninstallCP4S_OpenshiftCLI.html){: external}. 
 
 
 ## Upgrading IBM Cloud Pak® for Security
 {: #upgrade}
 
-The steps to upgrade are the same as the steps to install. The process automatically detects an older version and initiates an upgrade. Ensure that when filling in the parameters, the following parameters matches what you have in the version of IBM Cloud Pak® for Security currently installed in your cluster:
+If your approval strategy is set to **Automatic**, the IBM Cloud Pak® for Security operator upgrades automatically when new compatible versions are available. For more information, see [Approval Strategy](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/security-pak/approval_strategy.html){: external}. 
 
-* If you are upgrading from IBM Cloud Pak® for Security 1.9.X, use the following procedure to retrieve the values for the parameters you need to pass in during the upgrade.
+To upgrade IBM Cloud Pak® for Security when your approval strategy is set to **Manual**, see [Upgrading to a later 1.10 release when your approval strategy is set to Manual](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/security-pak/upgrading.html#upgrade_manual){: external}.
 
-    * Login to your Red Hat OpenShift web console.
-    * Go to **Operators** > **Installed Operators** and ensure that the `Project` dropdown is set to the namespace where IBM Cloud Pak® for Security 1.9.X was installed.
-    * In the list of installed operators, click **IBM Cloud Pak for Security**.
-    * Navigate to the `Threat Management` tab and click on the `threatmgmt` instance.
-    * From the `Threat Management Overview` page, make note of the value currently set for the following parameters:
-        * Admin User
-        * Domain
-        * Storage class
-        * Enable ROKS Authentication
 
-* If you are upgrading from IBM Cloud Pak® for Security 1.7.2.0, you must first upgrade to 1.9.X and use the following commands to retrieve the values for the parameters you need to pass in during the upgrade.
-
-    * `namespace` - Provide the namespace where IBM Cloud Pak® for Security 1.7.2.0 was installed.
-
-    * `adminUser` - The admin user ID set during the IBM Cloud Pak® for Security 1.7.2.0 installation. You can verify the value by running the following command:
-        ```bash
-        oc get deploy isc-entitlements -o yaml -n <CP4S_NAMESPACE> | grep "name: ADMIN_USER_ID" -A1
-        ```
-        {: codeblock}
-
-    * `domain` - The current domain being used by {{site.data.keyword.isc}} can be retrieved by running the following command:
-        ```bash
-        oc get route isc-route-default -o jsonpath='{.spec.host}' -n <CP4S_NAMESPACE>
-        ```
-        {: codeblock}
-
-    * `storageClass` - Set the storage class to the same storage class being used in IBM Cloud Pak® for Security 1.7.2.0 which should be default storage class. You can run the following command to verify the default storage class in the cluster:
-        ```bash
-        oc get sc
-        ```
-        {: codeblock}
-
-    * `roksAuthentication` - Set this to the same value you used in the `cp4sOpenshiftAuthentication` parameter when installing IBM Cloud Pak® for Security 1.7.2.0. Verify the value that you used by running the following command:
-        ```bash
-        oc get cm platform-auth-idp -n ibm-common-services -o jsonpath='{.data.ROKS_ENABLED}'
-        ```
-        {: codeblock}
-
+<!-- DRAFTED: Rollback not supported currently (drafted for future use)
 ## Rolling back to a previous version of IBM Cloud Pak® for Security
 {: #rollback}
 
 1. Uninstall IBM Cloud Pak® for Security completely using the CLI by following the steps described in [Uninstalling IBM Cloud Pak® for Security using CLI](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/security-pak/uninstallCP4S_OpenshiftCLI.html){: external}.
 
-2. Reinstall a previous version of IBM Cloud Pak® for Security by following install steps 1 to 5 in this [Getting started](#prereqs) document and select the 1.9.1.0 version of IBM Cloud Pak® for Security to install.
+2. Reinstall a previous version of IBM Cloud Pak® for Security and verify the installation. For more information, see [Installing IBM Cloud Pak® for Security using CLI](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/security-pak/install_via_cli.html){: external}.
 
-3. Reconfigure LDAP to add or recreate any users that existed before the upgrade. For more information, see [Configure LDAP](https://www.ibm.com/docs/en/SSTDPP_1.9/docs/security-pak/ldap-connect.html){: external}.
+3. Reconfigure LDAP to add or recreate any users that existed before the upgrade. For more information, see [Configure LDAP](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/security-pak/ldap-connect.html){: external}.
 
-4. If a backup was completed before the upgrade process, you can restore the backup. For more information, see [Backup and Restore](https://www.ibm.com/docs/en/SSTDPP_1.9/docs/scp-core/backup-intro.html){: external}.
+4. If a backup was completed before the upgrade process, you can restore the backup. For more information, see [Backup and Restore](https://www.ibm.com/docs/en/SSTDPP_1.10/docs/scp-core/backup-intro.html){: external}. -->
