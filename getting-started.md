@@ -54,7 +54,7 @@ IBM Cloud Pak® for Security includes the following offerings.
 - IBM® Security Guardium Vulnerability Assessment solution identifies threats and security holes that might be used by malicious actors to access sensitive data. The solution recommends concrete actions to strengthen security.
 - IBM® Detection and Response Center (Beta) provides a unified overview of your organization’s security posture through use cases from different security tools and platforms, saving you hours of gathering the same insights by using individual tools.
 
-For more information, see [IBM Documentation](hhttps://www.ibm.com/docs/en/cp-security/1.10?topic=solution-overview){: external}.
+For more information, see [IBM Documentation](https://www.ibm.com/docs/en/cp-security/1.10?topic=solution-overview){: external}.
 
 ## Purchasing a license
 {: #license-entitlement}
