@@ -237,10 +237,6 @@ Use the following commands to retrieve IBM Cloud Pak foundational services hostn
 
 3. [Add users to Cloud Pak® for Security](https://www.ibm.com/docs/en/cp-security/1.10?topic=administering-user-access-roles-permissions){: external}.
 
-4. Install the [IBM® Security Orchestration & Automation license](https://www.ibm.com/docs/en/cp-security/1.10?topic=postinstallation-installing-orchestration-automation-license){: external}.
-
-If you choose Orchestration & Automation as part of your Cloud Pak® for Security bundle, you must install your Orchestration & Automation license to access the complete orchestration and automation capabilities that are provided by Orchestration & Automation.
-
 5. [Configure data sources](https://www.ibm.com/docs/en/cp-security/1.10?topic=connections-universal-data-insights-connectors){: external}.
 
 ## Uninstalling the IBM Cloud Pak® for Security
