@@ -237,7 +237,7 @@ Use the following commands to retrieve IBM Cloud Pak foundational services hostn
 
 3. [Add users to Cloud Pak® for Security](https://www.ibm.com/docs/en/cp-security/1.10?topic=administering-user-access-roles-permissions){: external}.
 
-5. [Configure data sources](https://www.ibm.com/docs/en/cp-security/1.10?topic=connections-universal-data-insights-connectors){: external}.
+4. [Configure data sources](https://www.ibm.com/docs/en/cp-security/1.10?topic=connections-universal-data-insights-connectors){: external}.
 
 ## Uninstalling the IBM Cloud Pak® for Security
 {: #uninstall}
