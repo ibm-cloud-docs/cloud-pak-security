@@ -61,7 +61,7 @@ For more information, see [IBM Documentation](https://www.ibm.com/docs/en/cp-sec
 
 Before you can install IBM Cloud Pak® for Security, you must purchase a license. Purchase a license, also known as an entitlement, through [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}.
 
-For more information, see [Licensing and entitlement](https://www.ibm.com/docs/en/cp-security/1.10?topic=planning-license-options){: external}.
+For more information, see [Part numbers and entitlement](https://www.ibm.com/docs/en/cp-security/1.10?topic=planning-qradar-suite-software-part-numbers-entitlement){: external}.
 
 ## Before you begin
 {: #prereqs}
